@@ -29,6 +29,9 @@ use the editor.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
 
-- Keep the prototype's three screens as in-memory states of the index route; this prevents extra pages and avoids persisting simulated reports.
-- Keep building and machine options, machine-type resets, and predefined/custom problem validation in the browser-safe laundry-report module; shared rules make the simulated confirmation and tests consistent.
+- Keep the opening, username entry, report form, and confirmation as index-route UI states; report records are durable while navigation remains unchanged.
+- Keep building and machine options, machine-type resets, and predefined/custom problem validation in the browser-safe laundry-report module; the server submission schema reuses those rules.
 - Define visual styles and semantic color tokens in src/styles.css; shared Button variants supply accessible touch controls.
+- Custom experiment participants use server-validated hashed cookie sessions, not Cloud Auth; all participant tables and RPCs deny browser roles, and privileged access is confined to session-scoped server functions.
+- Derive weekly counts in SQL from immutable original report timestamps; database triggers prevent history loss and request UUIDs make retries idempotent.
+- Provide all-participant analysis through a service-only SQL view and privileged Cloud access, never through username-gated admin endpoints.
