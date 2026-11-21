@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep the prototype's three screens as in-memory states of the index route; this prevents extra pages and avoids persisting simulated reports.
+- Keep machine options and submission validation in the browser-safe laundry-report module; shared validation makes the simulated confirmation and tests consistent.
+- Define visual styles and semantic color tokens in src/styles.css; shared Button variants supply accessible touch controls.
