@@ -35,6 +35,7 @@ function Index() {
   const [busy, setBusy] = useState(false);
   const [saveError, setSaveError] = useState("");
   const [showUsernameReminder, setShowUsernameReminder] = useState(false);
+  const [showStatisticsOnForm, setShowStatisticsOnForm] = useState(false);
   const requestId = useRef<string | null>(null);
   const [selection, setSelection] = useState<ReportSelection>(emptySelection);
   const [attempted, setAttempted] = useState(false);
@@ -54,6 +55,7 @@ function Index() {
     requestId.current = null;
     setSaveError("");
     setShowUsernameReminder(false);
+    setShowStatisticsOnForm(false);
     setScreen("start");
   }
   async function signOut() {
@@ -96,7 +98,7 @@ function Index() {
       <main className={`report-main screen-${screen}`}>
         {saveError && <p className="field-error" role="alert">{saveError}</p>}
         {screen === "checking" && <section className="screen-content"><p role="status">Checking your session…</p>{identity.isError && <><p role="alert">Unable to check your session.</p><Button variant="report" size="touch" onClick={() => identity.refetch()}>Try again</Button></>}</section>}
-        {screen === "login" && <ParticipantLogin onBack={() => setScreen("start")} onLogin={user => { queryClient.setQueryData(["participant"], user); setShowUsernameReminder(true); setScreen("form"); }} />}
+        {screen === "login" && <ParticipantLogin onBack={() => setScreen("start")} onLogin={user => { queryClient.setQueryData(["participant"], user); setShowUsernameReminder(true); setShowStatisticsOnForm(false); setScreen("form"); }} />}
         {screen === "start" && <section className="screen-content" aria-labelledby="start-title">
           <div className="eyebrow">A LITTLE CARE FOR SHARED SPACES</div>
           <h1 id="start-title">Report a Problem</h1>
@@ -112,6 +114,12 @@ function Index() {
           <h1 id="form-title">Report a Problem</h1>
           <p className="intro form-intro">What happened with your machine?</p>
           {showUsernameReminder && participant && <UsernameReminder username={participant.username} onDismiss={() => setShowUsernameReminder(false)} />}
+          {participant && <>
+            <Button type="button" variant="outline" size="touch" className="w-full mt-5" aria-expanded={showStatisticsOnForm} aria-controls="form-statistics" onClick={() => setShowStatisticsOnForm(visible => !visible)}>
+              {showStatisticsOnForm ? "Hide my statistics" : "View my statistics"}
+            </Button>
+            {showStatisticsOnForm && <div id="form-statistics"><ParticipantActivity participant={participant} /></div>}
+          </>}
           <form onSubmit={submit} noValidate>
             <fieldset disabled={busy} className="report-fields">
             <div className="form-section"><label className="field-label" htmlFor="building"><span className="field-number">01</span>Building</label>
