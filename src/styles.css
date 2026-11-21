@@ -95,6 +95,13 @@ h1 { font-size: 38px; font-weight: 650; line-height: 1.2; margin: 0; letter-spac
 .screen-form { padding-top: 34px; }
 .screen-login { padding-top: 34px; }
 .login-symbol { width: 64px; height: 64px; display: grid; place-items: center; background: var(--accent); color: var(--primary); border-radius: 8px; margin: 0 0 22px; }
+.login-guidance { margin: 14px 0 0; color: var(--muted-foreground); font-size: 14px; line-height: 1.65; }
+.username-reminder { margin: 22px 0 24px; padding: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--accent); }
+.username-reminder h2 { margin: 0 0 8px; font-size: 17px; font-weight: 650; }
+.username-reminder p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--muted-foreground); }
+.username-reminder-value { display: block; margin-top: 12px; font-size: 17px; font-weight: 650; color: var(--primary); overflow-wrap: anywhere; user-select: text; }
+.username-reminder-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
+.username-reminder .username-reminder-status { margin-top: 10px; font-size: 12px; }
 .username-input { width: 100%; min-height: 56px; padding: 12px 16px; border: 1px solid var(--input); border-radius: 8px; background: var(--card); color: var(--foreground); }
 .username-input:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
 .account-controls { display: flex; align-items: center; gap: 12px; min-width: 0; }
