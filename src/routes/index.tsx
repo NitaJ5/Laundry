@@ -88,7 +88,7 @@ function Index() {
   return (
     <div className="app-shell">
       <header className="site-header">
-        <div className="brand"><span className="brand-mark"><WashingMachine size={23} strokeWidth={1.8} /></span><span><strong>KIU <span className="brand-light">Laundry</span></strong><span className="brand-caption">DORMITORY LIFE</span></span></div>
+        <div className="brand"><img src="/kiu-laundry-logo.svg" alt="KIU Laundry" className="brand-logo" /><span className="brand-caption">DORMITORY LIFE</span></div>
         {participant ? <div className="account-controls"><span className="account-username">{participant.username}</span><Button variant="ghost" onClick={signOut} disabled={busy}>Log out</Button></div> : <span className="prototype-badge"><span />Campus study</span>}
       </header>
       <main className={`report-main screen-${screen}`}>

@@ -59,7 +59,9 @@
 }
 .app-shell { min-height: 100svh; display: flex; flex-direction: column; }
 .site-header { height: 104px; padding: 0 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); background: var(--card); }
-.brand { display: flex; gap: 12px; align-items: center; }
+.brand { display: flex; flex-direction: column; gap: 0; align-items: flex-start; min-width: 0; }
+.brand-logo { display: block; width: clamp(150px, 20vw, 225px); height: auto; max-width: 100%; }
+.brand .brand-caption { margin: -3px 0 0 57px; }
 .brand-mark { width: 42px; height: 46px; border-radius: 8px; background: var(--accent); color: var(--primary); display: grid; place-items: center; }
 .brand strong { display: block; font-size: 21px; font-weight: 700; }
 .brand-light { font-weight: 450; }
@@ -156,7 +158,9 @@ select:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
   .site-header { height: 82px; padding: 0 22px; }
   .account-controls { gap: 2px; max-width: 48%; }
   .account-username { font-size: 11px; }
-  .brand { gap: 9px; }
+  .brand { gap: 0; }
+  .brand-logo { width: 150px; }
+  .brand .brand-caption { margin-left: 41px; }
   .brand strong { font-size: 18px; }
   .brand-mark { width: 35px; height: 40px; }
   .brand-caption { font-size: 8px; }
@@ -182,3 +186,8 @@ select:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
   .confirmation-symbol { width: 76px; height: 76px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+@media (max-width: 380px) {
+  .brand-logo { width: 130px; }
+  .brand .brand-caption { margin-left: 33px; }
+}

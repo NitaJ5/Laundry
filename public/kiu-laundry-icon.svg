@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 98" role="img" aria-labelledby="title"><title id="title">KIU Laundry</title><defs><clipPath id="water-clip"><circle cx="41" cy="57" r="18"/></clipPath></defs>
+  <rect x="6" y="5" width="73" height="85" rx="13" fill="#074B88"/>
+  <rect x="12" y="10" width="61" height="18" rx="4" fill="#07518D"/>
+  <circle cx="23" cy="19" r="4" fill="#FFFFFF"/>
+  <circle cx="35" cy="19" r="4" fill="#FFFFFF"/>
+  <rect x="51" y="15" width="17" height="8" rx="4" fill="#05B4A5"/>
+  <rect x="12" y="30" width="61" height="54" rx="3" fill="#FFFFFF"/>
+  <circle cx="41" cy="57" r="24" fill="#07518D"/>
+  <circle cx="41" cy="57" r="18" fill="#FFFFFF"/>
+  <path d="M23 56 Q31 49 41 55 Q52 61 59 53 L59 74 L23 74 Z" fill="#05B1C0" clip-path="url(#water-clip)"/>
+  <circle cx="35" cy="66" r="3" fill="#FFFFFF"/>
+  <circle cx="47" cy="58" r="3.5" fill="#FFFFFF"/>
+  <path d="M57 58 H78 Q84 58 84 64 V79 Q84 85 78 85 H66 L57 93 V85 H57 Q52 85 52 79 V64 Q52 58 57 58 Z" fill="#FFFFFF" stroke="#06A995" stroke-width="3"/>
+  <path d="M60 69 L65 74 L72 66" fill="none" stroke="#05A993" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M72 76 H79" stroke="#07518D" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="82" cy="56" r="10" fill="#E65B48" stroke="#FFFFFF" stroke-width="2.5"/>
+  <path d="M82 51 V57" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="82" cy="61" r="1.5" fill="#FFFFFF"/></svg>
