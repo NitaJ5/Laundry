@@ -1,4 +1,4 @@
-# Kiulaundryproblemreportingprototype
+# Laundry
 
 **Live app**: https://kiulaundryproblemreportingprototype.lovable.app
 
