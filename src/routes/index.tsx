@@ -303,8 +303,15 @@ function Index() {
                   className="w-full mt-5"
                   aria-expanded={showStatisticsOnForm}
                   aria-controls="form-statistics"
-                  onClick={() => setShowStatisticsOnForm((visible) => !visible)}
-                >
+onClick={() => {
+  if (!showStatisticsOnForm) {
+    captureEvent("student_opened_reporting_statistics", {
+      participant_id: participant.id,
+    });
+  }
+
+  setShowStatisticsOnForm(!showStatisticsOnForm);
+}}                >
                   {showStatisticsOnForm ? "Hide my statistics" : "View my statistics"}
                 </Button>
                 {showStatisticsOnForm && (
