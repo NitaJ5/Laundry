@@ -81,7 +81,7 @@ function Index() {
   const [showStatisticsOnForm, setShowStatisticsOnForm] = useState(false);
   const requestId = useRef<string | null>(null);
   const trackedFormParticipant = useRef<string | null>(null);
-  s;
+
   const [selection, setSelection] = useState<ReportSelection>(emptySelection);
   const [attempted, setAttempted] = useState(false);
   const [report, setReport] = useState<SavedReport | null>(null);
