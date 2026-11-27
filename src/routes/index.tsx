@@ -206,7 +206,13 @@ function Index() {
         {screen === "login" && (
           <ParticipantLogin
             onBack={() => setScreen("start")}
+
             onLogin={(user) => {
+              captureEvent("student_completed_username_login", {
+                participant_id: user.id,
+                login_success: true,
+              });
+
               queryClient.setQueryData(["participant"], user);
               setShowUsernameReminder(true);
               setShowStatisticsOnForm(false);
