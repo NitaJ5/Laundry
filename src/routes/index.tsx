@@ -80,6 +80,8 @@ function Index() {
   const [showUsernameReminder, setShowUsernameReminder] = useState(false);
   const [showStatisticsOnForm, setShowStatisticsOnForm] = useState(false);
   const requestId = useRef<string | null>(null);
+  const trackedFormParticipant = useRef<string | null>(null);
+  s;
   const [selection, setSelection] = useState<ReportSelection>(emptySelection);
   const [attempted, setAttempted] = useState(false);
   const [report, setReport] = useState<SavedReport | null>(null);
@@ -89,6 +91,24 @@ function Index() {
   useEffect(() => {
     if (screen === "checking" && identity.isSuccess) setScreen(participant ? "form" : "login");
   }, [screen, identity.isSuccess, participant]);
+
+  useEffect(() => {
+    if (screen !== "form") {
+      trackedFormParticipant.current = null;
+      return;
+    }
+
+    if (!participant) return;
+
+    if (trackedFormParticipant.current === participant.id) return;
+
+    trackedFormParticipant.current = participant.id;
+
+    captureEvent("student_opened_problem_form", {
+      participant_id: participant.id,
+    });
+  }, [screen, participant]);
+
   function beginReport() {
     setSaveError("");
     setScreen(identity.isSuccess ? (participant ? "form" : "login") : "checking");
